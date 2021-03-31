@@ -1,0 +1,88 @@
+{
+  "files.eol": "\n",
+  // "files.associations": {
+  //   "*.js": "javascriptreact"
+  // },
+  // Editor
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.tabCompletion": "on",
+  "editor.minimap.enabled": false,
+  // Aplica um sinal visual na esquerda da linha selecionada
+  "editor.renderLineHighlight": "gutter",
+  // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
+  "editor.rulers": [
+    90,
+    // 120
+  ],
+  // Editor Font Style
+  "editor.lineHeight": 25,
+  "editor.fontSize": 16,
+  "editor.fontFamily": "Victor Mono",
+  "editor.letterSpacing": 0.5,
+  "editor.fontLigatures": false,
+  "editor.fontWeight": "400",
+  // Terminal Font Style
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.letterSpacing": 1,
+  "terminal.integrated.fontWeight": 200,
+  "terminal.integrated.cursorStyle": "line",
+  // Terminal
+  // "terminal.integrated.shell.linux": "/bin/bash",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  // Live Server
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  // Define o tema dos ícones na sidebar
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "workbench.colorCustomizations": {
+    "[Community Material Theme Ocean High Contrast]": {
+      "editor.background": "#090B10",
+      "editorGroupHeader.tabsBackground": "#090B10",
+      "tab.inactiveBackground": "#090B10",
+      "tab.border": "#090B10",
+      "tab.activeBorder": "#9575CD",
+      "tab.hoverBackground": "#0B0D12",
+      "statusBarItem.remoteBackground": "#9575CD",
+      "breadcrumb.background": "#090B10",
+      "list.inactiveSelectionForeground": "#9575CD",
+      "list.activeSelectionForeground": "#9575CD"
+    }
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "window.menuBarVisibility": "toggle",
+  // https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css/"
+    },
+  ],
+  "markdownlint.customRules": [
+    "{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
+  ],
+  "markdownlint.config": {
+    "MD028": false
+  },
+  "angular.experimental-ivy": true,
+  // Based on Elixir formatter's style
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  // Misc
+  "editor.wordBasedSuggestions": false,
+  "editor.trimAutoWhitespace": false,
+  "emmet.includeLanguages": {
+    "html-eex": "html"
+  },
+  "erlang.enableExperimentalAutoComplete": true,
+  "workbench.activityBar.visible": false,
+}
