@@ -1,8 +1,29 @@
 {
-  "files.eol": "\n",
+  // Based on Elixir formatter's style
+  "elixirLS.suggestSpecs": true,
+  "elixirLS.dialyzerEnabled": true,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  // Misc
+  "editor.wordBasedSuggestions": false,
+  "editor.trimAutoWhitespace": false,
+  "emmet.includeLanguages": {
+    "html-eex": "html"
+  },
+  // elixir credo
+  "elixir.credo.ignoreWarningMessages": true,
+  "elixir.credo.lintEverything": true,
+  "elixir.credo.strictMode": true,
+  "erlang.enableExperimentalAutoComplete": true,
   // "files.associations": {
   //   "*.js": "javascriptreact"
   // },
+  "files.eol": "\n",
   // Editor
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
@@ -12,47 +33,30 @@
   "editor.renderLineHighlight": "gutter",
   // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
   "editor.rulers": [
-    90,
+    98,
     // 120
   ],
   // Editor Font Style
   "editor.lineHeight": 25,
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.fontFamily": "Victor Mono",
-  "editor.letterSpacing": 0.5,
+  "editor.letterSpacing": 1,
   "editor.fontLigatures": false,
   "editor.fontWeight": "400",
   // Terminal Font Style
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontFamily": "Victor Mono",
   "terminal.integrated.letterSpacing": 1,
-  "terminal.integrated.fontWeight": 200,
+  "terminal.integrated.fontWeight": 100,
   "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 1,
   // Terminal
-  // "terminal.integrated.shell.linux": "/bin/bash",
-  "terminal.integrated.shell.linux": "/bin/zsh",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.defaultProfile.linux": "/bin/zsh",
+  "terminal.integrated.defaultProfile.windows": "C:\\Program Files\\Git\\git-bash.exe",
+  "terminal.integrated.cursorBlinking": true,
   // Live Server
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
-  // Define o tema dos ícones na sidebar
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
-  "workbench.colorCustomizations": {
-    "[Community Material Theme Ocean High Contrast]": {
-      "editor.background": "#090B10",
-      "editorGroupHeader.tabsBackground": "#090B10",
-      "tab.inactiveBackground": "#090B10",
-      "tab.border": "#090B10",
-      "tab.activeBorder": "#9575CD",
-      "tab.hoverBackground": "#0B0D12",
-      "statusBarItem.remoteBackground": "#9575CD",
-      "breadcrumb.background": "#090B10",
-      "list.inactiveSelectionForeground": "#9575CD",
-      "list.activeSelectionForeground": "#9575CD"
-    }
-  },
-  "workbench.startupEditor": "newUntitledFile",
   "window.menuBarVisibility": "toggle",
   // https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
   "liveSassCompile.settings.formats": [
@@ -68,21 +72,88 @@
   "markdownlint.config": {
     "MD028": false
   },
-  "angular.experimental-ivy": true,
-  // Based on Elixir formatter's style
-  "editor.insertSpaces": true,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
-  // Misc
-  "editor.wordBasedSuggestions": false,
-  "editor.trimAutoWhitespace": false,
-  "emmet.includeLanguages": {
-    "html-eex": "html"
+  "workbench.colorCustomizations": {
+    "[Community Material Theme Ocean High Contrast]": {
+      "editor.background": "#090B10",
+      // "editorCursor.foreground": "#7d4dcf",
+      "titleBar.border": "#090B10",
+      "editorGroupHeader.tabsBorder": "#090B10",
+      "editorGroupHeader.tabsBackground": "#090B10",
+      "tab.activeBorder": "#090B10",
+      "tab.activeBorderTop": "#904dfd",
+      // "tab.activeBackground": "#0E1015",
+      "tab.activeForeground": "#9575CD",
+      "tab.inactiveBackground": "#090B10",
+      "tab.border": "#090B10",
+      // "tab.hoverBackground": "#0B0D12",
+      "breadcrumb.background": "#090B10",
+      "statusBarItem.remoteBackground": "#090B10",
+      "statusBarItem.remoteForeground": "#9575CD",
+      "list.inactiveSelectionForeground": "#9575CD",
+      "list.activeSelectionForeground": "#9575CD",
+      // "activityBar.foreground": "#9575CD",
+      "activityBarBadge.background": "#9575CD",
+      "activityBar.border": "#090B10"
+    }
   },
-  "erlang.enableExperimentalAutoComplete": true,
-  "workbench.activityBar.visible": false,
+  "editor.tokenColorCustomizations": {
+    "[Community Material Theme Ocean High Contrast]": {
+      "textMateRules": [
+        {
+          "scope": "string",
+          "settings": {
+            "foreground": "#14AE60",
+          }
+        },
+        {
+          "scope": "keyword.control",
+          "settings": {
+            // "foreground": "#7743c9",
+            "foreground": "#a770ff",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "entity.name.function",
+          "settings": {
+            // "foreground": "#9575CD",
+            // "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "punctuation",
+          "settings": {
+            "foreground": "#fff"
+          }
+        },
+        {
+          "name": "Elixir: module attributes",
+          "scope": "variable.other.readwrite.module.elixir",
+          "settings": {
+            // "foreground": "#9575CD",
+            // "foreground": "#3d90fd",
+            // "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Elixir: atoms",
+          // "scope": "constant.other.symbol.elixir",
+          "scope": "constant",
+          "settings": {
+            // "fontStyle": "italic",
+          }
+        },
+        {
+          "name": "Elixir: modules",
+          "scope": "variable.other.constant.elixir",
+          "settings": {
+            "foreground": "#FF4945",
+          }
+        },
+      ]
+    },
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
 }
