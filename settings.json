@@ -1,28 +1,35 @@
 {
+  "[elixir]": {
+    "editor.formatOnSave": true
+  },
   // Based on Elixir formatter's style
-  "elixirLS.suggestSpecs": true,
-  "elixirLS.dialyzerEnabled": false,
+  "elixirLS.suggestSpecs": false,
+  "elixirLS.dialyzerEnabled": true,
   "editor.insertSpaces": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
   "editor.formatOnType": true,
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   // Misc
   "editor.wordBasedSuggestions": false,
   "editor.trimAutoWhitespace": false,
   "emmet.includeLanguages": {
-    "html-eex": "html"
+    "html-eex": "html",
+    "erb": "html",
   },
-  // elixir credo
-  "elixir.credo.ignoreWarningMessages": true,
-  "elixir.credo.lintEverything": true,
-  "elixir.credo.strictMode": true,
-  "erlang.enableExperimentalAutoComplete": true,
-  // "files.associations": {
-  //   "*.js": "javascriptreact"
-  // },
+  "files.associations": {
+    "*.eex": "html-eex",
+    "*.leex": "html-eex",
+    // "*.js": "javascriptreact"
+  },
+  "material-icon-theme.files.associations": {
+    "*.go": "go_gopher",
+    "*.html.erb": "html"
+  },
+  "material-icon-theme.saturation": 1,
+  "material-icon-theme.opacity": 1,
   "files.eol": "\n",
   // Editor
   "editor.tabSize": 2,
@@ -33,7 +40,7 @@
   "editor.renderLineHighlight": "gutter",
   // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
   "editor.rulers": [
-    98,
+    80,
     // 120
   ],
   // Editor Font Style
@@ -41,7 +48,7 @@
   "editor.fontSize": 17,
   "editor.fontFamily": "Victor Mono",
   "editor.letterSpacing": 1,
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "editor.fontWeight": "400",
   // Terminal Font Style
   "terminal.integrated.fontSize": 17,
@@ -51,8 +58,8 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 1,
   // Terminal
-  "terminal.integrated.defaultProfile.linux": "/bin/zsh",
-  "terminal.integrated.defaultProfile.windows": "C:\\Program Files\\Git\\git-bash.exe",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.cursorBlinking": true,
   // Live Server
   "liveServer.settings.donotShowInfoMsg": true,
@@ -72,122 +79,63 @@
   "markdownlint.config": {
     "MD028": false
   },
-  "workbench.colorCustomizations": {
-    "[Community Material Theme Ocean High Contrast]": {
-      "editor.background": "#090B10",
-      // "editorCursor.foreground": "#7d4dcf",
-      "titleBar.border": "#090B10",
-      "editorGroupHeader.tabsBorder": "#090B10",
-      "editorGroupHeader.tabsBackground": "#090B10",
-      "tab.activeBorder": "#090B10",
-      "tab.activeBorderTop": "#9060ff",
-      // "tab.activeBackground": "#0E1015",
-      "tab.activeForeground": "#9f76ff",
-      "tab.inactiveBackground": "#090B10",
-      "tab.border": "#090B10",
-      // "tab.hoverBackground": "#0B0D12",
-      "breadcrumb.background": "#090B10",
-      "statusBarItem.remoteBackground": "#090B10",
-      "statusBarItem.remoteForeground": "#9f76ff",
-      "list.inactiveSelectionForeground": "#9f76ff",
-      "list.activeSelectionForeground": "#9f76ff",
-      // "activityBar.foreground": "#9575CD",
-      "activityBarBadge.background": "#9f76ff",
-      "activityBar.border": "#090B10"
-    }
-  },
+  "workbench.startupEditor": "newUntitledFile",
   "editor.tokenColorCustomizations": {
-    "[Community Material Theme Ocean High Contrast]": {
+    "[Bearded Theme Black & Amethyst]": {
       "textMateRules": [
         {
-          "scope": "string",
-          "settings": {
-            "foreground": "#14ae6e",
-            // "foreground": "#ff815b",
-          }
-        },
-        {
-          "name": "String Interpolation",
+          "name": "<< >>",
           "scope": [
-            "punctuation.section.embedded",
-            "constant.character.escape"
+            "keyword.operator.bitwise.dart",
+            "keyword.operator.comparison.dart"
           ],
           "settings": {
-            // "foreground": "#14ae6e",
-            // "fontStyle": "bold"
+            "foreground": "#C7910C"
           }
         },
         {
-          "scope": "keyword.control",
-          "settings": {
-            // "foreground": "#a770ff",
-            "foreground": "#9f76ff",
-            // "fontStyle": "italic bold"
-          }
-        },
-        {
-          "scope": "keyword.operator",
-          "settings": {
-            "fontStyle": "bold",
-            "foreground": "#9f76ff"
-          }
-        },
-        {
-          "scope": "entity.name.function",
-          "settings": {
-            // "foreground": "#FF79C6",
-            // "foreground": "#fd6262",
-            "fontStyle": "bold"
-          }
-        },
-        {
-          "scope": "punctuation",
-          "settings": {
-            "foreground": "#ffffff"
-          }
-        },
-        {
-          "name": "Elixir: module attributes",
-          "scope": "variable.other.readwrite.module.elixir",
-          "settings": {
-            // "foreground": "#9575CD",
-            // "foreground": "#3d90fd",
-            // "fontStyle": "italic"
-          }
-        },
-        {
-          "name": "Elixir: modules",
-          "scope": "variable.other.constant.elixir",
-          "settings": {
-            "foreground": "#FF79C6",
-          }
-        },
-        {
-          "name": "Constant, Function Argument, Tag Attribute, Embedded",
+          "name": "class",
           "scope": [
-            "constant.language",
-            // "support.constant",
-            // "constant.character",
-            // "constant.escape",
-            // "keyword.other.unit",
-            // "keyword.other"
+            "keyword.declaration.dart"
           ],
           "settings": {
-            // "foreground": "#79beff",
-            "foreground": "#78D1E1",
+            "foreground": "#C7910C",
           }
-        },
-        {
-          "name": "Number",
-          "scope": "constant.numeric",
-          "settings": {
-            // "foreground": "#FF79C6",
-          }
-        },
+        }
       ]
-    },
+    }
   },
-  "workbench.startupEditor": "newUntitledFile",
+  "elixirLinter.useStrict": true,
+  "tabnine.experimentalAutoImports": true,
   "workbench.iconTheme": "bearded-icons",
-  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "terminal.integrated.tabs.enabled": false,
+  "dart.previewFlutterUiGuides": false,
+  "dart.previewFlutterUiGuidesCustomTracking": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  // "dart.openDevTools": "flutter"
+
+  // FVM - start
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    // Remove .fvm files from search
+    "search.exclude": {
+      "**/.fvm": true
+    },
+    // Remove from file watching
+    "files.watcherExclude": {
+      "**/.fvm": true
+    },
+    "workbench.colorTheme": "Bearded Theme Black & Amethyst",
+    "security.workspace.trust.untrustedFiles": "open"
+  // FVM - end
 }
