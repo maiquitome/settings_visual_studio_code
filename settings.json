@@ -1,20 +1,6 @@
 {
-  "[elixir]": {
-    "editor.formatOnSave": true
-  },
-  // Based on Elixir formatter's style
-  "elixirLS.suggestSpecs": false,
-  "elixirLS.dialyzerEnabled": true,
-  "editor.insertSpaces": true,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
   // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
   "editor.formatOnType": true,
-  // "editor.formatOnSave": true,
-  // Misc
-  "editor.wordBasedSuggestions": false,
-  "editor.trimAutoWhitespace": false,
   "emmet.includeLanguages": {
     "html-eex": "html",
     "erb": "html",
@@ -24,98 +10,257 @@
     "*.leex": "html-eex",
     // "*.js": "javascriptreact"
   },
+  // Misc
+  "editor.wordBasedSuggestions": false,
+  "editor.trimAutoWhitespace": false,
   "material-icon-theme.files.associations": {
     "*.go": "go_gopher",
     "*.html.erb": "html"
   },
   "material-icon-theme.saturation": 1,
   "material-icon-theme.opacity": 1,
+  // LF ao invés de CRLF
   "files.eol": "\n",
   // Editor
   "editor.tabSize": 2,
-  "editor.wordWrap": "on",
+  // "editor.wordWrap": "on",
   "editor.tabCompletion": "on",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   // Aplica um sinal visual na esquerda da linha selecionada
   "editor.renderLineHighlight": "gutter",
   // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
   "editor.rulers": [
     80,
-    // 120
+    100
   ],
   // Editor Font Style
-  "editor.lineHeight": 25,
-  "editor.fontSize": 17,
+  "editor.lineHeight": 24,
+  "editor.fontSize": 15,
   "editor.fontFamily": "Victor Mono",
   "editor.letterSpacing": 1,
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
   "editor.fontWeight": "400",
   // Terminal Font Style
-  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Victor Mono",
   "terminal.integrated.letterSpacing": 1,
-  "terminal.integrated.fontWeight": 100,
+  "terminal.integrated.fontWeight": "400",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 1,
   // Terminal
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // "terminal.integrated.defaultProfile.linux": "zsh",
+  // "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.cursorBlinking": true,
-  // Live Server
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.donotVerifyTags": true,
-  "window.menuBarVisibility": "toggle",
-  // https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "~/../css/"
-    },
-  ],
-  "markdownlint.customRules": [
-    "{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
-  ],
-  "markdownlint.config": {
-    "MD028": false
-  },
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.indent": 10,
   "editor.tokenColorCustomizations": {
-    "[Bearded Theme Black & Amethyst]": {
+    "[Omni]": {
       "textMateRules": [
         {
-          "name": "<< >>",
+          "name": "Dart",
           "scope": [
-            "keyword.operator.bitwise.dart",
-            "keyword.operator.comparison.dart"
+            "support.class.dart",
           ],
           "settings": {
-            "foreground": "#C7910C"
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "Elixir Function Call",
+          "scope": [
+            "entity.name.function-call.elixir",
+          ],
+          "settings": {
+            "foreground": "#d2afff",
+          }
+        },
+        {
+          "name": "Elixir & % @ {} []",
+          "scope": [
+            "variable.other.anonymous.elixir",
+            "punctuation.definition.map.elixir",
+            "punctuation.definition.variable.elixir",
+            "punctuation.section.scope.elixir",
+            "punctuation.section.array.elixir"
+          ],
+          "settings": {
+            "foreground": "#FF79C6",
+          }
+        },
+        {
+          "name": ":",
+          "scope": [
+            "constant.language.symbol.elixir"
+          ],
+          "settings": {
+            "foreground": "#8f92b1",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "Elixir #{}",
+          "scope": [
+            "punctuation.section.embedded.elixir"
+          ],
+          "settings": {
+            "foreground": "#E7DE79",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "name": "Elixir module",
+          "scope": [
+            "entity.name.type.module.elixir"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "123",
+          "scope": [
+            "constant.numeric.elixir"
+          ],
+          "settings": {
+            "foreground": "#E89E64"
+          }
+        },
+      ]
+    },
+    "[Default Dark+]": {
+      "textMateRules": [
+        {
+          "name": "italic",
+          "scope": [
+            "comment",
+            "entity.other.attribute-name",
+            "keyword",
+            "markup.underline.link",
+            "storage.modifier",
+            "storage.type",
+            "string.url",
+            "variable.language.super",
+            "variable.language.this",
+            "variable.language.dart"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "reset",
+          "scope": [
+            "keyword.operator",
+            "keyword.other.type",
+            "storage.modifier.import",
+            "storage.modifier.package",
+            "storage.type.built-in",
+            "storage.type.function.arrow",
+            "storage.type.generic",
+            "storage.type.java",
+            "storage.type.primitive"
+          ],
+          "settings": {
+            "fontStyle": "",
+          }
+        },
+        {
+          "name": "operators",
+          "scope": [
+            "keyword.operator",
+            "punctuation.comma.dart",
+            "punctuation.terminator.dart",
+            "punctuation.dot.dart"
+          ],
+          "settings": {
+            "foreground": "#949494",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "name": "operators",
+          "scope": [
+            "keyword.control",
+            "constant.language.symbol.ruby",
+          ],
+          "settings": {
+            "foreground": "#ca9be5",
           }
         },
         {
           "name": "class",
           "scope": [
-            "keyword.declaration.dart"
+            "storage.type.primitive",
+            "keyword",
+            "storage.type",
+            "storage.modifier",
+            "keyword.control.class.ruby",
+            "keyword.control.def.ruby",
+            "keyword.control.ruby",
           ],
           "settings": {
-            "foreground": "#C7910C",
+            "foreground": "#569CD6",
           }
-        }
+        },
+        {
+          "name": "function and method",
+          "scope": [
+            "entity.name.function",
+            "entity.name.function.dart",
+            "keyword.other.special-method.ruby"
+          ],
+          "settings": {
+            "foreground": "#ee8484",
+          }
+        },
+        {
+          "name": "",
+          "scope": [
+            "source.dart",
+            "variable.other.ruby"
+          ],
+          "settings": {
+            "foreground": "#cecccc",
+          }
+        },
+        {
+          "name": "number",
+          "scope": [
+            "constant.numeric.dart",
+            "constant.numeric"
+          ],
+          "settings": {
+            "foreground": "#ffb184",
+          }
+        },
+        {
+          "name": "string",
+          "scope": [
+            "string",
+          ],
+          "settings": {
+            "foreground": "#e9dc91",
+          }
+        },
+        {
+          "name": "",
+          "scope": [
+            "comment",
+          ],
+          "settings": {
+            "foreground": "#4d4d4d",
+          }
+        },
       ]
     }
   },
-  "elixirLinter.useStrict": true,
-  "tabnine.experimentalAutoImports": true,
-  "workbench.iconTheme": "bearded-icons",
   "terminal.integrated.tabs.enabled": false,
-  "dart.previewFlutterUiGuides": false,
-  "dart.previewFlutterUiGuidesCustomTracking": false,
+  "editor.formatOnSave": true,
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.rulers": [
-      80
+      80,
     ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -124,18 +269,20 @@
     "editor.wordBasedSuggestions": false
   },
   // "dart.openDevTools": "flutter"
-
-  // FVM - start
-    "dart.flutterSdkPath": ".fvm/flutter_sdk",
-    // Remove .fvm files from search
-    "search.exclude": {
-      "**/.fvm": true
-    },
-    // Remove from file watching
-    "files.watcherExclude": {
-      "**/.fvm": true
-    },
-    "workbench.colorTheme": "Bearded Theme Black & Amethyst",
-    "security.workspace.trust.untrustedFiles": "open"
-  // FVM - end
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editor.untitled.hint": "hidden",
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.flutterHotRestartOnSave": false,
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "bracketPairColorizer.depreciation-notice": false,
+  // widget end comment
+  "dart.closingLabels": false,
+  "workbench.colorTheme": "Omni",
+  "elixirLS.suggestSpecs": false,
+  "elixir.credo.executePath": "/Users/maiquipirollitome/.asdf/shims",
+  "redhat.telemetry.enabled": true,
+  "dart.hotReloadOnSave": "manual",
+  "files.autoSave": "afterDelay",
+  "elixirLS.fetchDeps": true
 }
